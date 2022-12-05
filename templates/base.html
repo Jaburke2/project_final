@@ -1,0 +1,93 @@
+<header id="header" class="shadow bg-light">
+    <nav class="container navbar">
+        <a  class="nav-brand text-dark">
+             My Exercise Website
+         </a>
+         <h4 class="secondary-title text-secondary">
+            {% if user.is_authenticated %}
+           <p>Welcome {{ user.username }}</p>
+           {% else %}
+           <p>You are not logged in.</p>
+           {% endif %} 
+           </h4>
+           <div class="col-md-8">
+            {% if messages %}
+              {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+   
+    <div>
+
+         <!-- toggle button -->
+         <button class="toggle-button">
+             <span><i class="fas fa-bars"></i></span>
+         </button>
+
+         <!-- collapse on toggle button click -->
+         <div class="collapse">
+             <ul class="navbar-nav">
+                 <a href="{% url 'home' %}" class="nav-link">Home</a>
+                 <a href="{% url 'categories' %}" class="nav-link">Learn</a>
+                 <a href="{% url 'about' %}" class="nav-link">About</a>
+                 {% if user.is_authenticated %}
+                 <a href="{% url 'logout' %}" class="nav-link"> Log out</a>
+                 <a href="{% url 'profile' %}" class="nav-link"> Dashboard</a>
+                 {% else %}
+                 <a href="{% url 'register' %}" class="nav-link">Sign up</a>
+                 <a href="{% url 'login' %}" class="nav-link">Log in</a>
+                 {% endif %}
+             </ul>
+         </div>
+
+    </nav>
+</header>
+{% block content %}
+{% endblock content %}
+
+<footer id="footer">
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-3">
+                <h2 class="footer-title secondary-title">About Us</h2>
+
+                <div class="secondary-title text-secondary">
+                     <p class="mt-2 ">
+                         This website serves as a beacon to help those in need of a community when it comes to their fitness journeys
+                         and to help educate them on topics such as nutrition, exercise, and well-mindedness
+                     </p>
+                     
+                     <address>
+                         <i class="fas fa-map-marker-alt text-primary"></i> 
+                         2501 4th Ave, Canyon, TX 79015
+                     </address>
+
+                     <div class="phone">
+                         <i class="fas fa-mobile text-primary"></i> 
+                         (806) 651-2000
+                     </div>
+
+                     <div class="email">
+                         <i class="fas fa-envelope text-primary"></i> 
+                         Jaburke2@buffs.wtamu.edu
+                     </div>
+
+                </div>
+            </div>
+            <div class="container-fluid fixed-bottom">
+                 <h2 class="footer-title secondary-title mt-2">Social Media</h2>
+                 <div class="tags social float:right">
+                     <div class="d-flex flex-wrap">
+                         <a href="https://www.facebook.com/" class="nav-link btn bg-light"><i class="fab fa-facebook-f"></i></a>
+                         <a href="https://twitter.com/" class="nav-link btn bg-light"><i class="fab fa-twitter"></i></a>
+                         <a href="https://www.instagram.com/" class="nav-link btn bg-light"><i class="fab fa-instagram"></i></a>
+                     </div>
+                 </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>

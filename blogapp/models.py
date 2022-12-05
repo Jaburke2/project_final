@@ -1,5 +1,7 @@
 from django.db import models
+from django.utils import timezone
 from django.contrib.auth.models import User
+from embed_video.fields import EmbedVideoField
 
 # Create your models here.
 class Category1(models.Model):
@@ -13,6 +15,7 @@ class Category2(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -41,5 +44,60 @@ class Comment(models.Model):
 
 
 
+class  Cardio_Video(models.Model):
+	title = models.CharField(max_length=100)
+	added = models.DateTimeField(auto_now_add=True)
+	url = EmbedVideoField()
+
+	def  __str__(self):
+		return  str(self.title)
+
+class Meta:
+    ordering = ['-added']
+
+
+class  Strength_Video(models.Model):
+	title = models.CharField(max_length=100)
+	added = models.DateTimeField(auto_now_add=True)
+	url = EmbedVideoField()
+
+	def  __str__(self):
+		return  str(self.title)
+
+class Meta:
+    ordering = ['-added']
+
+
+class  Power_Video(models.Model):
+	title = models.CharField(max_length=100)
+	added = models.DateTimeField(auto_now_add=True)
+	url = EmbedVideoField()
+
+	def  __str__(self):
+		return  str(self.title)
+
+class Meta:
+    ordering = ['-added']
+
+
+class  Flex_Video(models.Model):
+	title = models.CharField(max_length=100)
+	added = models.DateTimeField(auto_now_add=True)
+	url = EmbedVideoField()
+
+	def  __str__(self):
+		return  str(self.title)
+
+class Meta:
+    ordering = ['-added']
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    image = models.ImageField(default='https://res.cloudinary.com/dxzsuwkr7/image/upload/v1670138191/blog-post-image/what_jf6ur1.png', upload_to='blog-post-image')
+
+    def __str__(self):
+        return f'{self.user.username} Profile'
+    
 
 

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Exercise Website</title>
+
+    <!-- font awesome icons cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+    <!-- swiper slider css file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.5/swiper-bundle.min.css" integrity="sha512-m3pAvNriL711NMlhkZHK6K4Tu2/RjtrzyjxZU8mlAbxxoDoURy27KajN1LGTLeEEPvaN12mKAgSCrYEwF9y0jA==" crossorigin="anonymous" />
+
+    <!-- custom style.css file -->
+    <link rel="stylesheet" href="https://res.cloudinary.com/dxzsuwkr7/raw/upload/v1669933113/blogtutorial/style_nbodn4.css">
+
+</head>
+<body>
+    
+    <!-- Header -->
+{% extends "blogapp/base.html" %}
+    <!-- .Header -->
+{% block content %}
+<h1>New post</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+
+
+
+    <h4>Why are you posting this blog today?</h4>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="Because I want too">
+        <label class="form-check-label" for="Because I want too">Because I want too</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="To let the World know my life" checked="">
+        <label class="form-check-label" for="To let the World know my life">To let the World know my life</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="I'm bored" checked="">
+        <label class="form-check-label" for="I'm bored">I'm bored</label>
+      </div>
+
+    <br>
+
+    <h4>News Alert</h4>
+    <p>How would you like your followers to be notified of this post?</p>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="formSwitchCheckDefault">
+        <label class="form-check-label" for="formSwitchCheckDefault">Email</label>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="formSwitchCheckChecked" checked="">
+        <label class="form-check-label" for="formSwitchCheckChecked">Newsfeed</label>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="formSwitchCheckChecked" checked="">
+        <label class="form-check-label" for="formSwitchCheckChecked">Text Message</label>
+      </div>
+    <input type="submit" value="Save" />
+</form>
+
+
+
+{% endblock content %}
+
+
+    <!-- masonry libray for horizontal grid -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha512-JRlcvSZAXT8+5SQQAvklXGJuxXTouyq8oIMaYERZQasB8SBDHZaUbeASsJWpk0UUrf89DP3/aefPPrlMR1h1yQ==" crossorigin="anonymous"></script>
+
+    <!-- swiper slider cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.5/swiper-bundle.min.js" integrity="sha512-1LlEYE0qExJ/GUfAJ0k2K2fB5sIvMv/q6ueo3syohvQ3ElWDQVSMUOf39cxaDWHtNu7M6lF6ZC1H6A1m3SvheA==" crossorigin="anonymous"></script>
+
+    <!-- custom javascript main.js file -->
+    <script src="https://res.cloudinary.com/dxzsuwkr7/raw/upload/v1669933054/blogtutorial/main_rutckb.js"></script>
+</body>
+</html>

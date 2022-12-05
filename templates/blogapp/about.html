@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Exercise Website</title>
+
+    <!-- font awesome icons cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+    <!-- swiper slider css file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.5/swiper-bundle.min.css" integrity="sha512-m3pAvNriL711NMlhkZHK6K4Tu2/RjtrzyjxZU8mlAbxxoDoURy27KajN1LGTLeEEPvaN12mKAgSCrYEwF9y0jA==" crossorigin="anonymous" />
+
+    <!-- custom style.css file -->
+    <link rel="stylesheet" href="https://res.cloudinary.com/dxzsuwkr7/raw/upload/v1669933113/blogtutorial/style_nbodn4.css">
+
+</head>
+<body>
+    
+    <!-- Header -->
+{% extends "blogapp/base.html" %}
+    <!-- .Header -->
+{% block content %}
+    <!-- Main Site -->
+        <main id="site-main">
+
+            <!-- Post Content -->
+                <section class="container">
+                    <article id="post">
+                        <!-- article heading -->
+                        <div class="headings text-center">
+                            <!-- <div class="category">
+                                <a href="#" class="nav-link">Travel</a>
+                            </div> -->
+
+                            <div class="title">
+                                <h1 class="text-title text-dark display-1">About Us!</h1>
+                            </div>
+                            </div>
+
+                        </div>
+
+                        <!-- thumbnail  -->
+                        <div class="thumbnail mt-3">
+                            <img src=https://res.cloudinary.com/dxzsuwkr7/image/upload/v1670012991/blog-post-image/weights_c7expy.png  alt="" >
+                        </div>
+
+                        <!-- content -->
+                        <div class="content text-dark display-2 secondary-title mt-3">
+                            <p>If you have ever wanted to get back in shape. Be a better you. A STRONGER YOU. Then you
+                                have come to the right place! Here at this this website we have created a community that
+                                will not only gauge you in what you already know about your own fitness and health but we 
+                                can then teach you what else you may need to know and give you the tools you need to be 
+                                succesful in your endeavors!
+                            </p>
+                            <p>Once you think you have got a good idea of where your at and what you need to do to get to 
+                                where you want to be, dont forget to track your progress by creating your own blog and watch as
+                                you change and grow into the man/woman you always knew you could be. Don't forget to help everyone
+                                else on this journey with you by tracking their blogs and giving helpful motivational tips as they good
+                                on their ways too!
+                            </p>
+                            <h3> Where to begin </h3>
+                            <p>Begin with signing up to create your very own account, and from there go on over to our learn section
+                                and start learning about various exercises and stretches. After that, it
+                                is time to make your very first post and come up with a plan for where you want to be and how you are going to 
+                                get there! Don't forget to upload progress pics along the way. Remember, here you are a part of a community and we are going to keep track of you
+                                as much as you keep track of yourself!
+                            </p>
+                            <h3> Contact </h3>
+                        </div>
+                    </article>
+
+                    <!-- post footer -->
+                    <div class="post-footer mb-3">
+
+                        <div class="post-author text-center">
+                            <div class="author-avatar">
+                                <img src="https://res.cloudinary.com/dxzsuwkr7/image/upload/v1670012299/blog-post-image/IMG_4665_vkjdvq.jpg" class="rounded" alt="">
+                            </div>
+
+                            <div class="author-info py-2">
+                                <h3 class="text-dark">Joshua Burke</h3>
+
+                                <p class="text-secondary secondary-title">
+                                    Joshua Burke is a graduate student in the Computer Information Systems and Business Analytics program at 
+                                    West Texas A&M University. He created this website for his E-commerce class, and is, in fact, not really 
+                                    a fitness professional (sad)
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- .post footer -->
+
+                </section>
+            <!-- .Post Content -->
+
+
+       </main>
+    <!-- .Main Site -->
+{% endblock content %}
+
+
+    <!-- masonry libray for horizontal grid -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha512-JRlcvSZAXT8+5SQQAvklXGJuxXTouyq8oIMaYERZQasB8SBDHZaUbeASsJWpk0UUrf89DP3/aefPPrlMR1h1yQ==" crossorigin="anonymous"></script>
+
+    <!-- swiper slider cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.5/swiper-bundle.min.js" integrity="sha512-1LlEYE0qExJ/GUfAJ0k2K2fB5sIvMv/q6ueo3syohvQ3ElWDQVSMUOf39cxaDWHtNu7M6lF6ZC1H6A1m3SvheA==" crossorigin="anonymous"></script>
+
+    <!-- custom javascript main.js file -->
+    <script src="https://res.cloudinary.com/dxzsuwkr7/raw/upload/v1669933054/blogtutorial/main_rutckb.js"></script>
+</body>
+</html>

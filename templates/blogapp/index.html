@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gridy Blog</title>
+    <title>My Exercise Website</title>
 
     <!-- font awesome icons cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
@@ -18,7 +18,8 @@
 <body>
     
     <!-- Header -->
-    {% include 'blogapp/nav.html' %}
+{% extends "blogapp/base.html" %}
+{% block content %}
     <!-- .Header -->
 
     <!-- Main Site -->
@@ -44,7 +45,7 @@
                                                 </a>
                                                 <p class="secondary-title text-secondary display-3">
                                                     <span><i class="far fa-clock text-primary"></i> {{i.date}}</span>
-                                                    <span><i class="far fa-comments text-primary"></i> 12</span>
+                                                    <span><i class="far fa-comments text-primary"></i> {{number_of_comments}}</span>
                                                 </p>
                                             </div>
                                         </div>
@@ -52,10 +53,6 @@
                                 </div>
                             {% endfor %}
 
-                        </div>
-
-                        <div class="text-center">
-                            <button class="btn btn-primary secondary-title text-light">Load More Posts...</button>
                         </div>
                     </div>
                 </section>
@@ -90,10 +87,6 @@
        </main>
     <!-- .Main Site -->
 
-    <!-- footer -->
-    {% include 'blogapp/footer.html' %}
-    <!-- .footer -->
-
 
     <!-- masonry libray for horizontal grid -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha512-JRlcvSZAXT8+5SQQAvklXGJuxXTouyq8oIMaYERZQasB8SBDHZaUbeASsJWpk0UUrf89DP3/aefPPrlMR1h1yQ==" crossorigin="anonymous"></script>
@@ -105,3 +98,4 @@
     <script src="https://res.cloudinary.com/dxzsuwkr7/raw/upload/v1669933054/blogtutorial/main_rutckb.js"></script>
 </body>
 </html>
+{% endblock content %}
