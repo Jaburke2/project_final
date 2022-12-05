@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'cloudinary',
     'cloudinary_storage',
     'embed_video',
-    'crispy_forms'
+    'crispy_forms',
+    'social_django'
 ]
 
 MIDDLEWARE = [
@@ -57,6 +58,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = "blogprj.urls"
@@ -75,10 +77,21 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "django.template.context_processors.request",
+                "social_django.context_processors.backends",
+                "social_django.context_processors.login_redirect",
             ],
         },
     },
 ]
+
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.github.GithubOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 WSGI_APPLICATION = "blogprj.wsgi.application"
 
@@ -95,11 +108,14 @@ WSGI_APPLICATION = "blogprj.wsgi.application"
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dmm5k1c17u8e1',
+        'USER': 'cltppjqaofzxtx',
+        'PASSWORD': '168819401b7b05b77c52d99854651fb7a37ef5bb03d5b91c0cacf832b09399a8',
+        'HOST': 'ec2-3-219-19-205.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -164,3 +180,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'apikey'
 EMAIL_HOST_PASSWORD = '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'
+
+
+SOCIAL_AUTH_FACEBOOK_KEY = '818827049219421'  # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = '91c3a226455ed3161e6d720fea832a21'

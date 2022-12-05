@@ -32,6 +32,8 @@
             <button class="btn btn-outline-info" type="submit">Login</button>
             <small class="text-musted ml-2">
                 <a href="{% url 'password_reset' %}"> Forgot password? </a>
+                <p><strong>-- OR --</strong></p>
+    <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
         </div>
     </form>
     <div class="border-top pt-3">
