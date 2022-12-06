@@ -94,7 +94,7 @@ class Meta:
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = models.ImageField(default='https://res.cloudinary.com/dxzsuwkr7/image/upload/v1670138191/blog-post-image/what_jf6ur1.png', upload_to='blog-post-image')
+    image = models.ImageField(default='https://res.cloudinary.com/dxzsuwkr7/image/upload/v1670295320/blog-post-image/what_gzzgu5.png', upload_to='blog-post-image' )
 
     def __str__(self):
         return f'{self.user.username} Profile'
